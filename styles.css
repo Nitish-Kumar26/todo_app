@@ -1,0 +1,144 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #eceff1;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+h1 {
+    text-align: center;
+    color: #00796b;
+    margin-bottom: 20px;
+    font-size: 24px;
+    animation: slideInDown 1s ease-in-out;
+}
+
+@keyframes slideInDown {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.todo-input {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    animation: slideInLeft 1s ease-in-out;
+}
+
+@keyframes slideInLeft {
+    from { transform: translateX(-20px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+#todo-text {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #b2dfdb;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+#todo-text:focus {
+    border-color: #00796b;
+    outline: none;
+}
+
+#add-todo {
+    padding: 10px;
+    border: none;
+    background-color: #00796b;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#add-todo:hover {
+    background-color: #004d40;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    animation: fadeIn 1s ease-in-out;
+}
+
+li {
+    background-color: #b2dfdb;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+li:hover {
+    transform: scale(1.02);
+    background-color: #a5d6a7;
+}
+
+li.completed {
+    text-decoration: line-through;
+    color: #888;
+    background-color: #c8e6c9;
+}
+
+li button {
+    margin-left: 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+li button.edit {
+    color: #ffa000;
+}
+
+li button.delete {
+    color: #d32f2f;
+}
+
+li button.complete {
+    color: #388e3c;
+}
+
+li button:hover {
+    color: #00796b;
+}
+
+li span[contenteditable] {
+    display: inline-block;
+    min-width: 150px;
+    padding: 2px;
+    border-bottom: 1px dotted transparent;
+    transition: border-bottom 0.2s ease;
+}
+
+li span[contenteditable]:focus {
+    border-bottom: 1px dotted #00796b;
+    outline: none;
+}
